@@ -1,7 +1,8 @@
 
-name: CI
+name: CI/CD
 
 on:
+  # We want to run this workflow on commit to master
   push:
     branches: [ master ]
   pull_request:
@@ -15,9 +16,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v2
