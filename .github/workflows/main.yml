@@ -23,12 +23,13 @@ jobs:
         with:
           node-version: '14'
           
+        # Build (install) dependencies
       - name: install node_modules
         run: npm install
         
-      # TODO: run tests here
+        # Run tests
       - name: run tests
-        run: echo tests
+        run: npm run test
       
   # Deploy to Heroku (If tests were fine)
   deploy:
